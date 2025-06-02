@@ -1,4 +1,11 @@
 from .base import *
+import environ
+from pathlib import Path
+
+# Initialize environment variables
+env = environ.Env(DEBUG=(bool, False))
+environ.Env.read_env()  # Load .env file
+
 # Development settings for the Real Estate project
 DATABASES = {
     'default': {
